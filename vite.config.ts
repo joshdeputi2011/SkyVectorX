@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite'
-import path from 'path'
-import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'
+import tailwindcss from '@tailwindcss/vite'
+import path from 'path'
 
 export default defineConfig({
   plugins: [
@@ -9,15 +9,21 @@ export default defineConfig({
     tailwindcss(),
   ],
 
-  // 🔑 REQUIRED for GitHub Pages
-  base: "/SkyVectorX/",
-
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
     },
   },
 
-  // Raw asset support
+  // REQUIRED for GitHub Pages (repo name)
+  base: '/SkyVectorX/',
+
+  // REQUIRED because you're using /docs instead of gh-pages
+  build: {
+    outDir: 'docs',
+    emptyOutDir: true,
+  },
+
+  // Optional but safe
   assetsInclude: ['**/*.svg', '**/*.csv'],
 })
