@@ -1,12 +1,16 @@
 {
-  "name": "@figma/my-make-file",
+  "name": "skyvectorx",
   "private": true,
   "version": "0.0.1",
   "type": "module",
+
   "scripts": {
+    "dev": "vite",
     "build": "vite build",
-    "dev": "vite"
+    "deploy": "gh-pages -d dist"
   },
+
+  "homepage": "https://<your-username>.github.io/SkyVectorX",
   "dependencies": {
     "@emotion/react": "11.14.0",
     "@emotion/styled": "11.14.1",
